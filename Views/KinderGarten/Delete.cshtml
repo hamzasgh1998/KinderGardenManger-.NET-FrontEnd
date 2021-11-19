@@ -1,0 +1,146 @@
+﻿@model PI4SAE.Models.KinderGarten
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>KinderGarten</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idKinderGarten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idKinderGarten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nameKinderGarten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nameKinderGarten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descritpion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descritpion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateEvent2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateEvent2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.creationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.creationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nbEmployees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbEmployees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reputationComments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reputationComments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reputationReclamations)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reputationReclamations)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.reputationRates)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reputationRates)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.canteenn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.canteenn)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

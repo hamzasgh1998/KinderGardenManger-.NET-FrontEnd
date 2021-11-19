@@ -1,0 +1,92 @@
+﻿@model Pi4Sae4.Models.Comments
+
+@{
+    ViewBag.Title = "CreateComment";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+}
+
+<style>
+    .btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .success {
+        background-color: #4CAF50;
+    }
+        /* Green */
+        .success:hover {
+            background-color: #46a049;
+        }
+
+    .info {
+        background-color: #2196F3;
+    }
+        /* Blue */
+        .info:hover {
+            background: #0b7dda;
+        }
+
+    .warning {
+        background-color: #ff9800;
+    }
+        /* Orange */
+        .warning:hover {
+            background: #e68a00;
+        }
+
+    .danger {
+        background-color: #f44336;
+    }
+        /* Red */
+        .danger:hover {
+            background: #da190b;
+        }
+
+    .default {
+        background-color: #e7e7e7;
+        color: black;
+    }
+        /* Gray */
+        .default:hover {
+            background: #ddd;
+        }
+</style>
+
+<h2>Publish a Comment</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Comments</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.content, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+   
+   
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Publish" class="btn info" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

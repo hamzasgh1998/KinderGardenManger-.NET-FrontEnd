@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PI4SAE.Models.Events>
+
+@{
+    ViewBag.Title = "CountParticipant";
+    Layout = "~/Views/Shared/EspaceParent.cshtml";
+}
+
+<h2>CountParticipant</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+      
+        <th></th>
+    </tr>
+
+
+    <tr>
+       
+        <td>
+           @Html.ViewData["nb"]
+        </td>
+        <td>
+            @Html.ActionLink("Back to List", "Index")
+
+        </td>
+    </tr>
+
+
+</table>

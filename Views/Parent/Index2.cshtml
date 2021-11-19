@@ -1,0 +1,16 @@
+﻿@model IEnumerable<PI4SAE.Models.Parent>
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/EspaceParent.cshtml";
+}
+
+
+<h2>Parents Zone </h2>
+
+<p>
+    @Html.ActionLink("Parents Zone From Here", "IndexParent", "Parent")
+</p>
+
+<p>
+    @Html.ActionLink("Kids Zone From Here", "IndexKid", "Kid")
+</p>

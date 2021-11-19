@@ -1,0 +1,84 @@
+﻿@model PI4SAE.Models.Events
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/EspaceParent.cshtml";
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Events</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idEvent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idEvent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nameEvent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nameEvent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateEvent2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateEvent2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateEvent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateEvent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.capacityEvent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacityEvent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.priceEvent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.priceEvent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.typeEvent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typeEvent)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Pi4Sae4.Models.Posts>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+}
+
+<h2>Posts</h2>
+<meta http-equiv="refresh" content="2">
+
+<p>
+    <i class="fa fa-paper-plane" aria-hidden="true"></i>  @Html.ActionLink("Publish a Post", "CreateAdmin")
+</p>
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5"><span class="px-2">Latest Blog</span></p>
+            <h1 class="mb-4">Latest Articles From Blog</h1>
+        </div>
+        <div class="row pb-3">
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <div class="col-lg-4 mb-4">
+                        <div class="card border-0 shadow-sm mb-2">
+                            @{string path = "~/Content/Upload/" + @item.img;}
+
+                            <img class="card-img-top mb-2" src="@Url.Content(path)" width="150" height="150" />
+                            <div class="card-body bg-light text-center p-4">
+                                <h4 class="">@Html.DisplayFor(modelItem => item.subject)</h4>
+                                <div class="d-flex justify-content-center mb-3">
+
+
+
+                                    <small class="mr-3"><i class="fa fa-arrow-up" aria-hidden="true"></i>  @Html.DisplayFor(modelItem => item.nbrLike)</small>
+                                    <small class="mr-3">  <i class="fa fa-arrow-down" aria-hidden="true"></i> @Html.DisplayFor(modelItem => item.nbrDislike)</small>
+                                    <small class="mr-3"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> @Html.DisplayFor(modelItem => item.nbrSignal)</small>
+
+                                </div>
+                                <p> @Html.DisplayFor(modelItem => item.namePost)</p>
+
+
+                                <p><i class="fa fa-eye" aria-hidden="true"></i> @Html.ActionLink("See Post", "DetailsAdmin", new { id = item.idPost })</p>
+                               
+                                <p><i class="fa fa-ban" aria-hidden="true"></i> @Html.ActionLink("Delete Post", "Delete", new { id = item.idPost })</p>
+                                
+
+                                <p><i class="fa fa-search-minus" aria-hidden="true"></i>@Html.ActionLink("Scan Bad Words", "BadwordsFilter", new { id = item.idPost }) </p>
+                                <p><i class="fa fa-bell" aria-hidden="true"></i>@Html.ActionLink("Scan and Notify", "RemoveSignaled", new { id = item.idPost }) </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+
+
+
+
+
+
+            }
+
+
+
+        </div>
+    </div>
+</div>

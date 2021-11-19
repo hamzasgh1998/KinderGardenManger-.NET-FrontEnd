@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "RemoveSignaled";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+}
+
+<h2>RemoveSignaled</h2>
+
+@Html.ActionLink("Retour à l'original ", "IndexAdmin", new { id = @Html.ViewData["iddd"] })
+
+
+<p style="color: blue">@Html.ViewData["SignaledPost"]</p>

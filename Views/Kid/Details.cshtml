@@ -1,0 +1,48 @@
+﻿@model PI4SAE.Models.Kid
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+}
+<div>
+    <h4>Kid</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idKid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idKid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nameKid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nameKid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastNameKid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastNameKid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addressKid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addressKid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idKid }) |
+    @Html.ActionLink("Affecter un parent", "affecter")|
+    @Html.ActionLink("Back", "IndexKid","Kid")
+</p>

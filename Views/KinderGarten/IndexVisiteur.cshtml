@@ -1,0 +1,133 @@
+﻿@model IEnumerable<PI4SAE.Models.KinderGarten>
+
+@{
+    ViewBag.Title = "IndexVisiteur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{<table>
+        <tr>
+            <td>
+                <div>
+                    Find a kinder garten: @Html.TextBox("filtre")
+                </div>
+            </td>
+            <td> <input class="btn btn-primary btn-block border-0 py-3" type="submit" value="Search" id="submit" /> </td>
+        </tr>
+    </table>}
+<p>
+</p>
+<div class="container-fluid pt-5">
+    <div class="container pb-3">
+        <div class="row">
+
+
+
+            @foreach (var item in Model)
+            {
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>
+                                @Html.DisplayFor(modelItem => item.nameKinderGarten)
+
+                            </h4>
+                            <p class="m-0">
+
+
+
+
+                                In
+
+                                @Html.DisplayFor(modelItem => item.address)
+                                <br />
+
+
+                                Created in    @Html.DisplayFor(modelItem => item.dateEvent2)
+
+
+                                <br />
+
+                                With    @Html.DisplayFor(modelItem => item.nbEmployees) Workers
+                                <br />
+
+                                Price:  @Html.DisplayFor(modelItem => item.price) TND
+                                <br />
+
+
+
+                                Description :  @Html.DisplayFor(modelItem => item.descritpion)
+                                <br />
+
+                                Capacity:    @Html.DisplayFor(modelItem => item.capacity)
+                                <br />
+
+                                Email:    @Html.DisplayFor(modelItem => item.email)
+                                <br />
+
+                                Num:      @Html.DisplayFor(modelItem => item.tel)
+
+
+
+
+
+                                <br />
+
+
+
+
+
+
+
+
+
+
+
+
+                                @Html.ActionLink("Details", "Details", new { id = item.idKinderGarten })
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+
+        </div>
+    </div>
+</div>
+

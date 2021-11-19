@@ -1,0 +1,48 @@
+﻿@model Pi4Sae4.Models.Posts
+
+@{
+    ViewBag.Title = "DetailsAdmin";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+}
+
+<h2>View Post</h2>
+<style
+             .center-div {
+      margin: 0 auto;
+     width: 100px; 
+} 
+       ></style>
+<meta http-equiv="refresh" content="5">
+
+
+
+
+<div class="center-div">
+    <div class="card border-0 shadow-sm mb-2">
+
+        <p style="color:#FF0000" ;>@Html.DisplayFor(model => model.validePost) </p>
+        @{string path1 = "~/Content/Upload/" + Model.img;}
+
+        <img src="@Url.Content(path1)" width="150" height="150"  />
+        <div >
+            <h4 class="" @Html.DisplayFor(model => model.namePost)</h4>
+            <div class="d-flex justify-content-center mb-3">
+                <small class="mr-3">   <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>    @Html.DisplayFor(model => model.nbrSignal)    </small>
+                <small class="mr-3">    <i class="fa fa-arrow-up" aria-hidden="true"></i>    @Html.DisplayFor(model => model.nbrLike)    </small>
+                <small class="mr-3">    <i class="fa fa-thumbs-down" aria-hidden="true"></i>  </i>   @Html.DisplayFor(model => model.nbrDislike)     </small>
+
+               
+            </div>
+
+
+
+            <p> @Html.DisplayFor(model => model.description)</p>
+            <p>@Html.ActionLink("Add a Comment ", "CreateCommentAdmin", new { id = Model.idPost })</p>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("ViewComments", "ViewCommentsAdmin", new { id = Model.idPost }) |
+    
+    @Html.ActionLink("Back to List", "IndexAdmin")
+</p>

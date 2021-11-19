@@ -1,0 +1,74 @@
+﻿@model PI4SAE.Models.Events
+
+@{
+    ViewBag.Title = "Participer";
+    Layout = "~/Views/Shared/EspaceParent.cshtml";
+
+}
+
+<h2>Participer</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Events</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    User : @Session["UserConnecteName"]
+
+
+ 
+    <div class="form-group">
+        @Html.LabelFor(model => model.nameEvent, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayNameFor(model => model.nameEvent)
+
+            @Html.DisplayFor(model => model.nameEvent)
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.priceEvent, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayNameFor(model => model.priceEvent)
+
+            @Html.DisplayFor(model => model.priceEvent)
+
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.image, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+
+            @Html.DisplayNameFor(model => model.image)
+
+            @Html.DisplayFor(model => model.image)
+
+
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Participate" class="section-title px-3" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

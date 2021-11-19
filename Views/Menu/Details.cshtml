@@ -1,0 +1,50 @@
+﻿@model PI4SAE.Models.Menu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/EspaceParent.cshtml";
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Menu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idMenu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idMenu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.energetic_value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.energetic_value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plat)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.day)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

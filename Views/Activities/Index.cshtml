@@ -1,0 +1,106 @@
+﻿@model IEnumerable<PI4SAE.Models.Activities>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{<table>
+        <tr>
+            <td>
+                <div >
+                   Search for an activity: @Html.TextBox("filtre")
+                </div>
+            </td>
+            <td > <input class="btn btn-primary btn-block border-0 py-3" type="submit" value="Search" id="submit" /> </td>
+        </tr>
+    </table>}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+
+<div class="container-fluid pt-5">
+    <div class="container pb-3">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+
+
+
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4" style="padding: 30px;">
+                        <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
+                        <div class="pl-4">
+                            <h4>
+                                @Html.DisplayFor(modelItem => item.nameActivity)
+
+                            </h4>
+                            <p class="m-0">
+
+
+
+                                
+                                @Html.DisplayFor(modelItem => item.weekDay)
+
+
+                                <br />
+At 
+                                @Html.DisplayFor(modelItem => item.hourActivity)
+                                <br />
+
+                               With  @Html.DisplayNameFor(model => model.teacher) :
+                                @Html.DisplayFor(modelItem => item.teacher)
+
+                                <br />
+
+                               It is a
+                                @Html.DisplayFor(modelItem => item.typeActivity) activity
+                                <br />
+
+            in 
+                                @Html.DisplayFor(modelItem => item.KinderGarten.nameKinderGarten)
+
+
+                                <br />
+
+
+
+
+
+
+
+
+
+
+
+
+                                @Html.ActionLink("Edit", "Edit", new { id = item.idActivity }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.idActivity }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.idActivity }) |
+                                @Html.ActionLink("Affecter", "Affecter", new { id = item.idActivity })
+
+
+
+
+
+
+
+</div>
+                    </div>
+                </div>
+
+
+
+            }
+
+            </div>
+    </div>
+</div>
+
+   

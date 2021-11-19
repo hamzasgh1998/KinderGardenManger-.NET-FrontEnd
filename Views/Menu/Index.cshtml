@@ -1,0 +1,312 @@
+﻿@model IEnumerable<PI4SAE.Models.Menu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{<table>
+        <tr>
+            <td>
+                <div>
+                   Search for a menu : @Html.TextBox("filtre")
+                </div>
+            </td>
+            <td> <input  class="btn btn-primary btn-block border-0 py-3" type="submit" value="Search" id="submit" /> </td>
+        </tr>
+    </table>}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<script src="~/js/main.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/easing/easing.min.js"></script>
+<script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="~/lib/isotope/isotope.pkgd.min.js"></script>
+<script src="~/lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="~/mail/jqBootstrapValidation.min.js"></script>
+<script src="~/mail/contact.js"></script>
+
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5"><span class="px-2">Our Canteen </span></p>
+            <h1 class="mb-4">Menu</h1>
+        </div>
+        <div class="row">
+
+            <div class="container-fluid pt-5 pb-3">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-12 text-center mb-2">
+                            <ul class="list-inline mb-4" id="portfolio-flters">
+                               
+                                <a class="btn btn-outline-primary m-1 active" id="All">@Html.ActionLink("All", "Index",new { id="ALL"})</a>
+                                <a href="" class="btn btn-outline-primary m-1" id="MONDAY">@Html.ActionLink("MONDAY", "Day", new { id = "MONDAY" })</a>
+                                <a href="" class="btn btn-outline-primary m-1" id="TUESDAY">@Html.ActionLink("TUESDAY", "Day", new { id = "TUESDAY" })</a>
+                                <a href="" class="btn btn-outline-primary m-1" id="WEDNESDAY">@Html.ActionLink("WEDNESDAY", "Day", new { id = "WEDNESDAY" })</a>
+                                <a href="" class="btn btn-outline-primary m-1" id="THURSDAY">@Html.ActionLink("THURSDAY", "Day", new { id = "THURSDAY" })</a>
+                                <a href="" class="btn btn-outline-primary m-1" id="SATURDAY">@Html.ActionLink("FRIDAY", "Day", new { id = "FRIDAY" })</a>
+                                <a href="" class="btn btn-outline-primary m-1" id="SATURDAY">@Html.ActionLink("SATURDAY", "Day", new { id = "SATURDAY" })</a>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row portfolio-container">
+
+                        @foreach (var item in Model)
+                        {
+
+                            if (@Html.DisplayFor(modelItem => item.plat).ToString().Equals("PIZZA") == true)
+                            {
+
+                                <div class="col-md-6 col-lg-3 text-center team mb-5">
+                                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                        <img class="img-fluid w-100" src="~/img/PIZZA.jpg" alt="">
+                                        <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                    <h4>
+                                        @Html.DisplayFor(modelItem => item.day)
+                                    </h4>
+                                    <i>
+                                        @Html.DisplayFor(modelItem => item.plat)
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.energetic_value) Calorie
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.KinderGarten.nameKinderGarten)
+                                        <br />
+                                    </i>
+
+
+
+
+
+
+
+
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.idMenu })
+                                    @Html.ActionLink("Details", "Details", new { id = item.idMenu })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.idMenu })
+                                    @Html.ActionLink("Affecter", "Affecter", new { id = item.idMenu })
+                                </div>
+
+                            }
+
+                            if (@Html.DisplayFor(modelItem => item.plat).ToString().Equals("BURGER") == true)
+
+                            {
+                                <div class="col-md-6 col-lg-3 text-center team mb-5">
+                                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                        <img class="img-fluid w-100" src="~/img/burger.jpg" alt="">
+                                        <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                    <h4>
+                                        @Html.DisplayFor(modelItem => item.day)
+                                    </h4>
+                                    <i>
+                                        @Html.DisplayFor(modelItem => item.plat)
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.energetic_value) Calorie
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.KinderGarten.nameKinderGarten)
+                                        <br />
+                                    </i>
+
+
+
+
+
+
+
+
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.idMenu })
+                                    @Html.ActionLink("Details", "Details", new { id = item.idMenu })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.idMenu })
+                                    @Html.ActionLink("Affecter", "Affecter", new { id = item.idMenu })
+                                </div>
+
+
+                            }
+                            if (@Html.DisplayFor(modelItem => item.plat).ToString().Equals("SOUPE") == true)
+
+                            {
+                                <div class="col-md-6 col-lg-3 text-center team mb-5">
+                                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                        <img class="img-fluid w-100" src="~/img/soupe.jpg" alt="">
+                                        <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                    <h4>
+                                        @Html.DisplayFor(modelItem => item.day)
+                                    </h4>
+                                    <i>
+                                        @Html.DisplayFor(modelItem => item.plat)
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.energetic_value) Calorie
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.KinderGarten.nameKinderGarten)
+                                        <br />
+                                    </i>
+
+
+
+
+
+
+
+
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.idMenu })
+                                    @Html.ActionLink("Details", "Details", new { id = item.idMenu })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.idMenu })
+                                    @Html.ActionLink("Affecter", "Affecter", new { id = item.idMenu })
+                                </div>
+
+
+                            }
+                            if (@Html.DisplayFor(modelItem => item.plat).ToString().Equals("PATES") == true)
+
+                            {
+                                <div class="col-md-6 col-lg-3 text-center team mb-5">
+                                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                        <img class="img-fluid w-100" src="~/img/pates.jpg" alt="">
+                                        <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                    <h4>
+                                        @Html.DisplayFor(modelItem => item.day)
+                                    </h4>
+                                    <i>
+                                        @Html.DisplayFor(modelItem => item.plat)
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.energetic_value) Calorie
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.KinderGarten.nameKinderGarten)
+                                        <br />
+                                    </i>
+
+
+
+
+
+
+
+
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.idMenu })
+                                    @Html.ActionLink("Details", "Details", new { id = item.idMenu })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.idMenu })
+                                    @Html.ActionLink("Affecter", "Affecter", new { id = item.idMenu })
+                                </div>
+
+
+                            }
+                            if (@Html.DisplayFor(modelItem => item.plat).ToString().Equals("RIZ") == true)
+
+                            {
+
+                                <div class="col-md-6 col-lg-3 text-center team mb-5">
+                                    <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%;">
+                                        <img class="img-fluid w-100" src="~/img/riz.jpg" alt="">
+                                        <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-outline-light text-center mr-2 px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-outline-light text-center px-0" style="width: 38px; height: 38px;"
+                                               href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                    <h4>
+                                        @Html.DisplayFor(modelItem => item.day)
+                                    </h4>
+                                    <i>
+                                        @Html.DisplayFor(modelItem => item.plat)
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.energetic_value) Calorie
+                                        <br />
+                                        @Html.DisplayFor(modelItem => item.KinderGarten.nameKinderGarten)
+                                        <br />
+                                    </i>
+
+
+
+
+
+
+
+
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.idMenu })
+                                    @Html.ActionLink("Details", "Details", new { id = item.idMenu })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.idMenu })
+                                    @Html.ActionLink("Affecter", "Affecter", new { id = item.idMenu })
+                                </div>
+
+                            }
+
+
+
+
+
+
+
+
+
+
+
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+

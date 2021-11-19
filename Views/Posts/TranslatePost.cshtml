@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "TranslatePost";
+    Layout = "~/Views/Shared/EspaceAdmin.cshtml";
+}
+<style>
+    p {
+        color: #f00;
+    }
+</style>
+
+<h2>TranslatePost</h2>
+
+
+<br />
+@Html.ActionLink("Retour à l'original ", "Details", new { id = @Html.ViewData["iddd"] })
+
+
+    
+<p style="color: blue"> @Html.ViewData["NvPost"]</p>
+      
+ 
+
+
+
+
+
+
+

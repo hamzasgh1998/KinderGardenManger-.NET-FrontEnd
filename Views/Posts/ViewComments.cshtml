@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Pi4Sae4.Models.Comments>
+
+@{
+    ViewBag.Title = "ViewComments";
+    Layout = "~/Views/Shared/EspaceParent.cshtml";
+}
+
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+        #customers td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-right:1px;
+            text-align: center;
+            background-color: #007acc;
+            color: white;
+        }
+</style>
+
+<h2>Comments</h2>
+
+<p>
+    @Html.ActionLink("Retour à l'original ", "Details", new { id = @Html.ViewData["id"] })|
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+
+
+
+<table class="table" id="customers">
+    <tr>
+        
+        <th>
+            <p>  Comments  <i class="fa fa-comments" aria-hidden="true"></i></p>
+           
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        
+        <tr>
+
+            <td>
+                <i class="fa fa-comment" aria-hidden="true"></i>
+                
+
+                @Html.DisplayFor(modelItem => item.content)
+
+
+
+            </td>
+
+
+        </tr>
+    }
+   
+</table>
+
+
